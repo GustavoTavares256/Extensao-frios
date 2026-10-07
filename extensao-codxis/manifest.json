@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Extensão CodXis",
+  "version": "1.0.0",
+  "description": "Camada de multi-seleção de vendedores para os filtros do sistema CodXis.",
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.codxis.api.br/*"],
+      "js": [
+        "utils/dom.js",
+        "content/vendedores.js",
+        "content/presets.js",
+        "content/ui.js",
+        "content/observer.js",
+        "content/content.js"
+      ],
+      "css": ["styles/extension.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Extensão CodXis"
+  }
+}
